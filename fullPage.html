@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 声明了在移动设备上不进行缩放-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>fullPage简单例子</title>
+    <link href="https://cdn.bootcss.com/fullPage.js/2.8.9/jquery.fullPage.css" rel="stylesheet">
+    <style>
+        /*.a1{*/
+        /*background-color: red;*/
+        /*}*/
+        /*.a2{*/
+        /*background-color: blue;*/
+        /*}*/
+        /*.a3{*/
+        /*background-color: black;*/
+        /*}*/
+        /*.a4{*/
+        /*background-color: yellow;*/
+        /*}*/
+        .b1 {
+            background-color: darkgreen;
+        }
+
+        .b2 {
+            background-color: darkmagenta;
+        }
+
+        .b3 {
+            background-color: darkkhaki;
+        }
+
+        #header {
+            font-size: 50px;
+            position: fixed;
+            top: 50px;
+            right: 200px;
+        }
+
+        #fullpageMenu {
+            font-size: 30px;
+            position: fixed;
+            top: 0;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    Header
+</div>
+<ul id="fullpageMenu">
+    <li data-menuanchor="page1" class="active"><a href="#page1">1</a></li>
+    <li data-menuanchor="page2"><a href="#page2">2</a></li>
+    <li data-menuanchor="page3"><a href="#page3">3</a></li>
+    <li data-menuanchor="page4"><a href="#page4">4</a></li>
+</ul>
+<div id="fullpage">
+    <div class="section a1"><h1>一些内容</h1></div>
+    <div class="section a2"><h1>一些内容</h1></div>
+    <div class="section a3">
+        <div class="slide b1">Slide1</div>
+        <div class="slide b2">Slide2</div>
+        <div class="slide b3">Slide3</div>
+        <div class="slide ">Slide4</div>
+    </div>
+    <div class="section a4 "><h1>一些内容</h1></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/jquery.fullPage.js"></script>
+<script>
+    $(document).ready(function () {
+        //给id为。。的容器添加fullpage()方法
+        $('#fullpage').fullpage({
+            //为section设置颜色
+            sectionsColor: ['green', 'orange', 'gray', 'red'],
+            anchors: ['page1', 'page2', 'page3', 'page4'],
+            resize: true,
+            fixedElements: '#header',
+            menu: '#fullpageMenu',
+            navigation: true,
+            navigationPosition: 'left',
+            navigationTooltips: ['page1', 'page2', 'page3', 'page4'],
+
+        });
+    });
+</script>
+</body>
+</html>
